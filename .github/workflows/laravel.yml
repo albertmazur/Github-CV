@@ -10,7 +10,7 @@ jobs:
       - name: 🚚 Get latest code
         uses: actions/checkout@v4
       - name: 📂 Sync files
-        uses: SamKirkland/FTP-Deploy-Action@4.3.3
+        uses: SamKirkland/FTP-Deploy-Action@4.3.2
         with:
           server-dir: /public_html/
           server: ${{ secrets.host }}
