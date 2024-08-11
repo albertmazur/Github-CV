@@ -14,9 +14,9 @@ jobs:
               uses: SamKirkland/FTP-Deploy-Action@4.3.2
               with:
                 server-dir: /domains/generate-cv.albertmazur.pl/public_html/
-                server: ${{ secrets.hostprod }}
-                username: ${{ secrets.userprod }}
-                password: ${{ secrets.passprod }}
+                server: ${{ secrets.HOSTPROD }}
+                username: ${{ secrets.USERPROD }}
+                password: ${{ secrets.PASSPROD }}
             - name: Copy .env
               run: php -r "file_exists('.env') || copy('.env.example', '.env');"
             - name: Install Dependencies
