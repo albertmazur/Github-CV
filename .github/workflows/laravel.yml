@@ -19,5 +19,7 @@ jobs:
           password: ${{ secrets.password }}
       - name: Install Dependencies
         run: composer update
+      - name: Build node
+        run: npm run build
       - name: Generate key
         run: php artisan key:generate
