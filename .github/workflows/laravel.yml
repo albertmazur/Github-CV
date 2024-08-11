@@ -23,3 +23,5 @@ jobs:
         run: npm run build
       - name: Generate key
         run: php artisan key:generate
+
+        
