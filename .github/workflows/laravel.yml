@@ -13,7 +13,7 @@ jobs:
             - name: 📂 Sync files
               uses: SamKirkland/FTP-Deploy-Action@4.3.2
               with:
-                server-dir: /domains/generate-cv.albertmazur.pl/public_html/
+                server-dir: /public_html/
                 server: ${{ secrets.HOSTPROD }}
                 username: ${{ secrets.USERPROD }}
                 password: ${{ secrets.PASSPROD }}
