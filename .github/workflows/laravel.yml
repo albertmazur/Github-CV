@@ -17,8 +17,6 @@ jobs:
                 server: ${{ secrets.HOSTPROD }}
                 username: ${{ secrets.USERPROD }}
                 password: ${{ secrets.PASSPROD }}
-            - name: Copy .env
-              run: php -r "file_exists('.env') || copy('.env.example', '.env');"
             - name: Install Dependencies
               run: composer install -q --no-ansi --no-interaction --no-scripts --no-progress --prefer-dist
             - name: Generate key
