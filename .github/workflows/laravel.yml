@@ -21,9 +21,11 @@ jobs:
           server: ${{ secrets.host }}
           username: ${{ secrets.user }}
           password: ${{ secrets.password }}
-      - name: Install Dependencies
+      - name: Install Dependencies Composer
         run: composer update
-      - name: Build node
+      - name: Install Dependencies Node
+        run: npm install
+      - name: Build Node
         run: npm run build
       - name: Generate key
         run: php artisan key:generate
