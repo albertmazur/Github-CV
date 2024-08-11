@@ -3,20 +3,20 @@ on:
       branches:
         - master
 jobs:
-    web-deploy:
-        name: 🎉 Deploy
-        runs-on: ubuntu-latest
-        steps:
-            - name: 🚚 Get latest code
-              uses: actions/checkout@v4
-            - name: 📂 Sync files
-              uses: SamKirkland/FTP-Deploy-Action@4.3.3
-              with:
-                server-dir: /public_html/
-                server: ${{ secrets.HOSTPROD }}
-                username: ${{ secrets.USERPROD }}
-                password: ${{ secrets.PASSPROD }}
-            - name: Install Dependencies
-              run: composer install -q --no-ansi --no-interaction --no-scripts --no-progress --prefer-dist
-            - name: Generate key
-              run: php artisan key:generate
+  web-deploy:
+    name: 🎉 Deploy
+    runs-on: ubuntu-latest
+    steps:
+      - name: 🚚 Get latest code
+        uses: actions/checkout@v4
+      - name: 📂 Sync files
+        uses: SamKirkland/FTP-Deploy-Action@4.3.3
+        with:
+          server-dir: /public_html/
+          server: ${{ secrets.host }}
+          username: ${{ secrets.user }}
+          password: ${{ secrets.password }}
+      - name: Install Dependencies
+        run: composer install -q --no-ansi --no-interaction --no-scripts --no-progress --prefer-dist
+      - name: Generate key
+        run: php artisan key:generate
